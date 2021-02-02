@@ -20,14 +20,14 @@ public class Event implements Serializable {
 
 	private byte aktywny;
 
-	@Temporal(TemporalType.DATE)
+
 	@Column(name="do")
-	private Date do_;
+	private String do_;
 
 	private String nazwa;
 
-	@Temporal(TemporalType.DATE)
-	private Date od;
+	
+	private String od;
 
 	//bi-directional many-to-one association to Pokinaevencie
 	@OneToMany(mappedBy="event")
@@ -52,11 +52,11 @@ public class Event implements Serializable {
 		this.aktywny = aktywny;
 	}
 
-	public Date getDo_() {
+	public String getDo_() {
 		return this.do_;
 	}
 
-	public void setDo_(Date do_) {
+	public void setDo_(String do_) {
 		this.do_ = do_;
 	}
 
@@ -68,11 +68,11 @@ public class Event implements Serializable {
 		this.nazwa = nazwa;
 	}
 
-	public Date getOd() {
+	public String getOd() {
 		return this.od;
 	}
 
-	public void setOd(Date od) {
+	public void setOd(String od) {
 		this.od = od;
 	}
 

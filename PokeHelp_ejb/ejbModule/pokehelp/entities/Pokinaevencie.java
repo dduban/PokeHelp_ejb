@@ -18,11 +18,12 @@ public class Pokinaevencie implements Serializable {
 
 	//bi-directional many-to-one association to Event
 	@ManyToOne
+	@JoinColumn(name="pokemons_idpokemons", insertable=false, updatable=false)
 	private Event event;
 
 	//bi-directional many-to-one association to Pokemon
 	@ManyToOne
-	@JoinColumn(name="pokemons_idpokemons")
+	@JoinColumn(name="pokemons_idpokemons", insertable=false, updatable=false)
 	private Pokemon pokemon;
 
 	public Pokinaevencie() {

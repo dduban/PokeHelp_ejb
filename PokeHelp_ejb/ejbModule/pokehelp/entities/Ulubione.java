@@ -18,11 +18,12 @@ public class Ulubione implements Serializable {
 
 	//bi-directional many-to-one association to Pokemon
 	@ManyToOne
-	@JoinColumn(name="pokemons_idpokemons")
+	@JoinColumn(name="pokemons_idpokemons", insertable=false, updatable=false)
 	private Pokemon pokemon;
 
 	//bi-directional many-to-one association to User
 	@ManyToOne
+	@JoinColumn(name="user_iduser", insertable=false, updatable=false)
 	private User user;
 
 	public Ulubione() {

@@ -24,17 +24,25 @@ public class Kody implements Serializable {
 
 	private String team;
 
-	//bi-directional many-to-one association to User
 	@ManyToOne
+	@JoinColumn(name="user_iduser", insertable=false, updatable=false)
 	private User user;
 
-	//bi-directional many-to-one association to Wojew
 	@ManyToOne
 	@JoinColumn(name="wojew")
 	private Wojew wojewBean;
 
 	public Kody() {
 	}
+	
+	public Kody(KodyPK id, int kod, int lvl, String nickname, String team, Wojew wojewBean) {
+        this.id = id;
+        this.kod = kod;
+        this.lvl = lvl;
+        this.nickname = nickname;
+        this.team = team;
+        this.wojewBean = wojewBean;
+    }
 
 	public KodyPK getId() {
 		return this.id;

@@ -10,7 +10,7 @@ import java.util.List;
  * 
  */
 @Entity
-@Table(name="pokemons")
+@Table(name="pokemon")
 @NamedQuery(name="Pokemon.findAll", query="SELECT p FROM Pokemon p")
 public class Pokemon implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -25,7 +25,8 @@ public class Pokemon implements Serializable {
 	private String region;
 
 	private byte widoczny;
-
+	
+	
 	//bi-directional many-to-one association to Webo
 	@ManyToOne
 	@JoinColumn(name="webo")
